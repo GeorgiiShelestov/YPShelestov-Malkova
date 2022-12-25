@@ -1,0 +1,83 @@
+﻿<Window x:Class="MDK_UP.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+
+
+        Title="Staffadd" Height="380" Width="380"  ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="left" />
+        <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        <Setter Property="FontSize" Value="14"/>
+        </Style>
+        
+        <Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="left" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Border Background="#FF464646" >
+        <Border MinWidth="350" Margin="0,10,0,0" Background="White" VerticalAlignment="Top" Padding="20" MaxWidth="10" CornerRadius="10" Height="319">
+            
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="White"/>
+            </Border.Effect>
+
+            <StackPanel>
+                
+                <TextBlock  Text="Добавить сотрудника:" FontSize="20" FontWeight="Medium" Margin="0, 0, 0, 0" HorizontalAlignment="Center" Foreground="Black" OpacityMask="Black" Width="310" />
+                
+                <TextBlock Text="ID"  Foreground="Black" FontSize="10"/>
+                <TextBox Text="{Binding Id_staff }" Margin="0,0,0,0"  Width="310"/>
+                <TextBlock Text="Фамилия"  Foreground="Black" FontSize="10"/>
+                <TextBox Text="{Binding Surname}"   Width="310"/>
+                <TextBlock Text="Имя"  Foreground="Black" FontSize="10"/>
+                <TextBox Text="{Binding Name}"   Width="310" />
+                <TextBlock Text="Отчество" Foreground="Black" FontSize="10"/>
+                <TextBox Text="{Binding Patronymic}"   Width="310"/>
+                <TextBlock Text="Дата рождения"  Foreground="Black" FontSize="10"/>
+                <TextBox Text="{Binding Data_birth}"  Width="310"/>
+                <TextBlock Text="Номер телефона"  Foreground="Black" FontSize="10"/>
+                <TextBox Text="{Binding Telephone_number}" Margin="0,0,0,0"  Width="310"/>
+                <TextBlock Text="Отдел" Margin="0,0,0,0" Foreground="Black" FontSize="10"/>
+                <TextBox Text="{Binding Department }"  Margin="0,0,0,0"  Width="310"/>
+                
+                <Grid>
+                    <Button IsDefault="True" Content="Oк" Margin="0,8,0,8"  Width="50" Click="Accept_Click" HorizontalAlignment="Left" FontSize="10" BorderBrush="#FF151212" >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" >
+                                <GradientStop Color="White"/>
+                                <GradientStop Color="#FFFF6557" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button IsCancel="True" Content="Отмена" Margin="0,8,200,8"  Width="50" HorizontalAlignment="Right" FontSize="10" Click="Button_Click" BorderBrush="#FF151212" >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White"/>
+                                <GradientStop Color="#FFFF6557" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+                
+            </StackPanel>
+        </Border>
+    </Border>
+</Window>
